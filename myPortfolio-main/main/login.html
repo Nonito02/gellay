@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up Form</title>
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <script src="https://kit.fontawesome.com/a7b8ce4686.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Create Account</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user-astronaut fa-fade"></i>
+                        <input type="text" placeholder="Name" id="nameInput" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-at fa-fade"></i>
+                        <input type="email" placeholder="Email" id="emailInput" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock fa-fade"></i>
+                        <input type="password" placeholder="Password" id="passwordInput" required> 
+                    </div>
+                    <p style="color: white;">Forgot password? <a href="#" target="_blank">Click Here!</a></p>
+                </div>
+
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" id="loginBtn" class="disable">Login</button>
+                    
+                </div>
+                <br>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="icons8-facebook-16.png" width="15" height="15" alt="Facebook">
+                    <a style="color: rgb(255, 255, 255); text-decoration: none;" href="signin.html" target="_blank"><small>SignIn using Facebook</small></a> <br>
+                    <br>
+                    <div style="text-align: center; position: relative;">
+                </a>
+            </form>
+        </div>
+    </div>
+
+<script>
+
+let signupBtn = document.getElementById("signupBtn")
+let loginBtn = document.getElementById("loginBtn")
+let nameField = document.getElementById("nameField")
+let title = document.getElementById("title")
+
+
+loginBtn.onclick = function(){
+    
+    const emailValue = emailInput.value;
+    const passwordValue = passwordInput.value;
+
+    // Check if the email and password fields are not empty
+    if (emailValue.trim() === '' || passwordValue.trim() === '') {
+        alert("Please fill in your email and password.");
+    } else {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "Login";
+        signupBtn.classList.add("disable");
+        loginBtn.classList.remove("disable");
+        window.open('index.html', '_self');
+    }
+    
+}
+
+signupBtn.onclick = function(){
+    nameField.style.maxHeight = "60px";
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    loginBtn.classList.add("disable");
+
+
+    
+}
+
+
+</script>
+
+</body>
+</html>
